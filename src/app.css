@@ -1,0 +1,72 @@
+/* Agentia design tokens (from the UI Designer mockup). Dark only for now. */
+:root {
+  --bg: #030304;
+  --s1: #0f0f12;
+  --s2: #16161a;
+  --s3: #1e1e23;
+  --line: #1f1f25;
+  --line2: #2e2e36;
+  --text: #f5f5f7;
+  --text2: #a8a8b2;
+  --text3: #7d7d88;
+  --working: #0a84ff;
+  --waiting: #ffd60a;
+  --done: #30d158;
+  --paused: #8e8e96;
+  --danger: #ff453a;
+  --claude: #d97757;
+  --codex: #10a37f;
+  --copilot: #a371f7;
+  --opencode: #e8e8ea;
+  --term: #0c0c0e;
+  --card-top: #121216;
+  --card-bot: #0d0d10;
+  --r1: 6px;
+  --r2: 8px;
+  --r3: 10px;
+  --r4: 14px;
+  --r5: 18px;
+  --font: "SF Pro Text", -apple-system, "Inter", system-ui, sans-serif;
+  --display: "SF Pro Display", -apple-system, "Inter Display", "Inter", system-ui, sans-serif;
+  --mono: "GeistMono Nerd Font", "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+/* Themes (data-theme on <html>). "grafito" = Apple dark mode: elevated grays, not pure black. */
+:root[data-theme="grafito"] {
+  --bg: #1c1c1e; --s1: #2c2c2e; --s2: #323236; --s3: #3a3a3e; --line: #38383c; --line2: #48484e;
+  --text: #f5f5f7; --text2: #b4b4bc; --text3: #8e8e96; --term: #232326; --card-top: #2a2a2d; --card-bot: #252528;
+}
+:root[data-theme="medianoche"] {
+  --bg: #0e1220; --s1: #161b2c; --s2: #1c2236; --s3: #252c44; --line: #232a40; --line2: #313a56;
+  --text: #f2f4fb; --text2: #a9b1c8; --text3: #7a839d; --term: #141a2c; --card-top: #171d2f; --card-bot: #131829;
+}
+:root[data-theme="claro"] {
+  --bg: #ececf0; --s1: #ffffff; --s2: #f2f2f6; --s3: #e6e6ec; --line: #dcdce2; --line2: #cfcfd7;
+  --text: #1c1c1e; --text2: #5c5c66; --text3: #8a8a94; --term: #232326; --card-top: #ffffff; --card-bot: #fafafc;
+  color-scheme: light;
+}
+:root[data-theme="claro"] .btn.primary { background: #1c1c1e; color: #fff; border-color: #1c1c1e; }
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 13px;
+  -webkit-font-smoothing: antialiased; overflow: hidden; user-select: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, textarea, select { font: inherit; color: var(--text); }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--line2); border-radius: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+.mono { font-family: var(--mono); }
+.dim { color: var(--text2); }
+.dim3 { color: var(--text3); }
+.add { color: var(--done); font-weight: 700; }
+.del { color: var(--danger); font-weight: 700; }
+.pill { display: inline-flex; align-items: center; gap: 4px; font-size: 10.5px; font-weight: 700; padding: 2px 7px;
+  border-radius: 7px; white-space: nowrap; }
+.btn { height: 30px; border-radius: var(--r2); padding: 0 11px; display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12.5px; font-weight: 700; background: var(--s3); border: 1px solid var(--line2); }
+.btn:hover { filter: brightness(1.12); }
+.btn.primary { background: var(--text); color: #000; border-color: var(--text); }
+.btn.blue { background: var(--working); border-color: var(--working); color: #fff; }
+.btn:disabled { opacity: .45; cursor: default; }
+.card { background: linear-gradient(180deg, var(--card-top), var(--card-bot)); border: 1px solid var(--line); border-radius: var(--r4);
+  box-shadow: inset 0 1px 0 #ffffff0d; }
+.label { font-size: 10.5px; font-weight: 800; letter-spacing: .6px; color: var(--text3); text-transform: uppercase; }
